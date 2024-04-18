@@ -1,12 +1,9 @@
 {
-    "Status"                    : "Status",
     "age"                       : "Age at Assessment", 
     "age_at_onset"              : "Age at Onset", 
     "sex"                       : "Gender", 
     "bmi_comp"                  : "BMI", 
-    "zone_of_origin"            : "Zone of Origin", 
     "years_of_education"        : "Years of Education",
-    "education_level"           : "Education Level",
     "work"                      : "Working",
     "nature_of_work___1"        : "Worked in Agriculture",
     "nature_of_work___2"        : "Worked in Pesticide/Herbicide/Fungicide Manufacture",
