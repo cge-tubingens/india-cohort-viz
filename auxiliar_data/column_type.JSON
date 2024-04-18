@@ -1,0 +1,5 @@
+{
+    "cont_var": ["Age at Assessment", "Age at Onset", "BMI", "Years of Education", "MOCA Score", "BDI Score"],
+    "cat_exc" : ["Gender", "Zone of Origin", "Retirement", "Education Level", "Working", "Worked in Agriculture",
+           "Worked in Pesticide/Herbicide/Fungicide Manufacture", "Worked in Metallurgy"]
+}
