@@ -1,0 +1,21 @@
+{
+    "Status"                    : "Status",
+    "age"                       : "Age at Assessment", 
+    "age_at_onset"              : "Age at Onset", 
+    "sex"                       : "Gender", 
+    "bmi_comp"                  : "BMI", 
+    "zone_of_origin"            : "Zone of Origin", 
+    "years_of_education"        : "Years of Education",
+    "education_level"           : "Education Level",
+    "work"                      : "Working",
+    "nature_of_work___1"        : "Worked in Agriculture",
+    "nature_of_work___2"        : "Worked in Pesticide/Herbicide/Fungicide Manufacture",
+    "nature_of_work___3"        : "Worked in Metallurgy",
+    "total_score_for_moca"      : "MOCA Score",
+    "total_score_for_bdi"       : "BDI Score",
+    "over_your_lifetime_have_yo": "Job exposed to pest/herb/fung/insec/rodenticides",
+    "during_your_lifetime_did_y": "Used chemicals to kill insects, pests, plants at home", 
+    "in_your_lifetime_have_you" : "Somked 100 or more cigarretes",
+    "in_your_lifetime_have"     : "Regularly drunk caffeinated coffee", 
+    "have_you_ever_had_a_head_i": "Had head injuries"
+}
