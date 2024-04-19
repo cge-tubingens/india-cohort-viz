@@ -83,3 +83,21 @@ def zone_of_origin(X:pd.DataFrame)->pd.DataFrame:
     )
     
     return X
+
+def education_level(X:pd.DataFrame)->pd.DataFrame:
+
+    def converter(x):
+
+        if x is None: return None 
+
+        if x == 0: return 'Illiterate'
+        elif x <= 7: return '1 to 7'
+        elif x <= 12: return '8 to 12'
+        else:
+            return 'Above 12'
+
+    X['education_level'] = X['years_of_education'].apply(
+        lambda x: converter(x)
+    )
+
+    return X
