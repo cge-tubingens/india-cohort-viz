@@ -20,7 +20,7 @@ def data_loader(path_to_stata_file:str, cwd:str)->pd.DataFrame:
 
     stata_reader = StataReader(path_to_stata_file)
 
-    df = stata_reader.read(preserve_dtypes=False, convert_categoricals=False, convert_dates=True)
+    df = stata_reader.read(preserve_dtypes=False, convert_categoricals=True, convert_dates=True)
 
     df = df[cols_dict.keys()].copy()
 
@@ -36,3 +36,50 @@ def show_data(radio_val, data:pd.DataFrame, continuos:list=[], cat_class:list=[]
     elif radio_val in cat_class:
         summary_freq = summary_for_categorical(data, stat_col='Status', var_col=radio_val)
         st.table(summary_freq)
+
+def zone_of_origin(X:pd.DataFrame)->pd.DataFrame:
+
+    recode_dict = {
+            "Andhra Pradesh"             :"Southern Zone", 
+            "Arunachal Pradesh"          :"Eastern Zone",
+            "Assam"                      :"Eastern Zone", 
+            "Bihar"                      :"Eastern Zone", 
+            "Chhattisgarh"               :"Central Zone",
+            "Goa"                        :"Southern Zone", 
+            "Gujarat"                    :"Western Zone",
+            "Haryana"                    :"Northern Zone", 
+            "Himachal Pradesh"           :"Northern Zone", 
+            "Jammu and Kashmir"          :"Northern Zone", 
+            "Jharkhand"                  :"Eastern Zone",
+            "Karnataka"                  :"Southern Zone", 
+            "Kerala"                     :"Southern Zone", 
+            "Madhya Pradesh"             :"Central Zone",
+            "Maharashtra"                :"Western Zone", 
+            "Manipur"                    :"Eastern Zone", 
+            "Meghalaya"                  :"Eastern Zone", 
+            "Mizoram"                    :"Eastern Zone", 
+            "Nagaland"                   :"Eastern Zone", 
+            "Odisha"                     :"Eastern Zone", 
+            "Punjab"                     :"Northern Zone", 
+            "Rajasthan"                  :"Northern Zone",
+            "Sikkim"                     :"Eastern Zone", 
+            "Tamil Nadu"                 :"Southern Zone", 
+            "Telanga"                    :"Southern Zone", 
+            "Tripura"                    :"Eastern Zone", 
+            "Uttar Pradesh"              :"Central Zone",
+            "Uttarakhand"                :"Central Zone",
+            "West Bengal"                :"Eastern Zone",
+            "Andaman and Nicobar Islands":"Southern Zone",
+            "Chandigarh"                 :"Northern Zone",
+            "Dadra and Nagar Haveli"     :"Western Zone", 
+            "Daman and Diu"              :"Western Zone", 
+            "Delhi"                      :"Northern Zone",
+            "Lakshadweep"                :"Southern Zone", 
+            "Pondicherry"                :"Southern Zone"
+        }
+
+    X['zone_of_origin'] = X['state_of_origin'].apply(
+        lambda x: recode_dict[x] if x is not None else None
+    )
+    
+    return X
