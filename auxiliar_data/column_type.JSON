@@ -5,6 +5,7 @@
     "Zone of Origin"                                        : "categorical",
     "BMI"                                                   : "continuous", 
     "Years of Education"                                    : "continuous",
+    "Education Level"                                       : "categorical",
     "Working"                                               : "categorical",
     "Worked in Agriculture"                                 : "categorical",
     "Worked in Pesticide/Herbicide/Fungicide Manufacture"   : "categorical",
