@@ -64,7 +64,7 @@ def zone_of_origin(X:pd.DataFrame)->pd.DataFrame:
             "Rajasthan"                  :"Northern Zone",
             "Sikkim"                     :"Eastern Zone", 
             "Tamil Nadu"                 :"Southern Zone", 
-            "Telanga"                    :"Southern Zone", 
+            "Telangana"                  :"Southern Zone", 
             "Tripura"                    :"Eastern Zone", 
             "Uttar Pradesh"              :"Central Zone",
             "Uttarakhand"                :"Central Zone",
@@ -78,10 +78,11 @@ def zone_of_origin(X:pd.DataFrame)->pd.DataFrame:
             "Pondicherry"                :"Southern Zone"
         }
 
-    X['zone_of_origin'] = X['state_of_origin'].apply(
+    X['Zone of Origin'] = X['State of Origin'].apply(
         lambda x: recode_dict[x] if x is not None else None
     )
-    
+    X['Zone of Origin'] = X["Zone of Origin"].astype("category")
+
     return X
 
 def education_level(X:pd.DataFrame)->pd.DataFrame:
@@ -96,8 +97,10 @@ def education_level(X:pd.DataFrame)->pd.DataFrame:
         else:
             return 'Above 12'
 
-    X['education_level'] = X['years_of_education'].apply(
+    X['Education Level'] = X['Years of Education'].apply(
         lambda x: converter(x)
     )
+
+    X['Education Level'] = X['Education Level'].astype("category")
 
     return X
