@@ -1,7 +1,8 @@
 {
     "Age at Assessment"                                     : "continuous", 
     "Age at Onset"                                          : "continuous", 
-    "Gender"                                                : "categorical", 
+    "Gender"                                                : "categorical",
+    "Zone of Origin"                                        : "categorical",
     "BMI"                                                   : "continuous", 
     "Years of Education"                                    : "continuous",
     "Working"                                               : "categorical",
