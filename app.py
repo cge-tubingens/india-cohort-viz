@@ -9,7 +9,6 @@ import os
 import sys
 import json
 
-
 from india_cohort_viz.Helpers import data_loader, show_data, zone_of_origin, education_level
 from india_cohort_viz import Summary
 
