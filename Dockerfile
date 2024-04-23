@@ -11,6 +11,10 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://github.com/cge-tubingens/india-cohort-viz
 
+RUN set -ex && \
+    mkdir -p /root/.streamlit && \
+    echo "[general]\nemail = \"\"\n" > /root/.streamlit/credentials.toml
+
 COPY . .
 
 RUN pip3 install -r requirements.txt
